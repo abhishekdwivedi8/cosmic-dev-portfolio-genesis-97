@@ -1,150 +1,108 @@
 
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Download, Code, Trophy } from "lucide-react";
+import { Download, Mail, Github, Linkedin, ArrowDown } from "lucide-react";
 
 const HeroSection = () => {
-  const [currentRole, setCurrentRole] = useState(0);
-  const roles = ["Full-Stack Developer", "Problem Solver", "Tech Explorer"];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const socialLinks = [
-    {
-      name: "GitHub",
-      url: "https://github.com/abhishekdwivedi2022",
-      icon: Github,
-      className: "bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-purple-400 border-2 border-purple-400/40 hover:border-purple-400/80 shadow-lg hover:shadow-purple-400/20"
-    },
-    {
-      name: "LinkedIn",
-      url: "#",
-      icon: Linkedin,
-      className: "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white border-2 border-blue-400/40 hover:border-blue-400/80 shadow-lg hover:shadow-blue-400/20"
-    },
-    {
-      name: "Resume",
-      url: "#resume",
-      icon: Download,
-      className: "bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-400 hover:to-violet-500 text-white border-2 border-purple-400/40 hover:border-purple-400/80 shadow-lg hover:shadow-purple-400/20"
-    },
-    {
-      name: "LeetCode",
-      url: "https://leetcode.com/u/rkabhishekdwivedi/",
-      icon: Code,
-      className: "bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white border-2 border-orange-400/40 hover:border-orange-400/80 shadow-lg hover:shadow-orange-400/20"
-    },
-    {
-      name: "GFG",
-      url: "https://www.geeksforgeeks.org/user/r_abhishek/",
-      icon: Trophy,
-      className: "bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white border-2 border-green-400/40 hover:border-green-400/80 shadow-lg hover:shadow-green-400/20"
-    }
-  ];
-
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 mt-4">
-      {/* Enhanced Animated Background */}
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      {/* Enhanced animated background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Multiple Gradient Blobs */}
-        <div className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-r from-purple-500/30 to-violet-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-        <div className="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-indigo-500/30 to-purple-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
-        <div className="absolute top-1/2 right-1/4 w-60 h-60 bg-gradient-to-r from-violet-500/20 to-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-1000"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-500/30 via-violet-500/40 to-indigo-500/30 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-violet-500/35 via-blue-500/45 to-cyan-500/35 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-indigo-500/25 via-purple-500/35 to-violet-500/25 rounded-full filter blur-3xl animate-blob"></div>
         
-        {/* Enhanced Floating Particles */}
-        <div className="particles">
-          {[...Array(20)].map((_, i) => (
-            <div key={i} className="particle" style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
-              animationDuration: `${6 + Math.random() * 4}s`,
-              background: `radial-gradient(circle, ${
-                i % 4 === 0 ? 'rgba(147, 51, 234, 0.8)' :
-                i % 4 === 1 ? 'rgba(139, 92, 246, 0.8)' :
-                i % 4 === 2 ? 'rgba(59, 130, 246, 0.8)' :
-                'rgba(168, 85, 247, 0.8)'
-              } 0%, transparent 70%)`
-            }}></div>
-          ))}
+        {/* Floating particles */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-400 rounded-full animate-bounce animation-delay-1000"></div>
+          <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-violet-400 rounded-full animate-bounce animation-delay-2000"></div>
+          <div className="absolute bottom-1/4 left-3/4 w-2 h-2 bg-indigo-400 rounded-full animate-bounce animation-delay-3000"></div>
         </div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Profile Photo */}
-          <div className="flex justify-center lg:justify-start animate-fade-in">
-            <div className="relative">
-              <div className="w-64 h-64 rounded-full bg-gradient-to-br from-purple-400 via-violet-500 to-indigo-400 p-1 animate-float neon-glow shadow-2xl">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-5xl font-bold gradient-text border-2 border-purple-400/20">
-                  AD
+      <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto animate-fade-in">
+          {/* Profile Image with enhanced glow */}
+          <div className="mb-8">
+            <div className="relative inline-block">
+              <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500 p-1 animate-pulse">
+                <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
+                  <span className="text-6xl font-bold text-white">AD</span>
                 </div>
               </div>
-              {/* Enhanced decorative rings */}
-              <div className="absolute -inset-6 rounded-full border-2 border-purple-400/40 animate-ping"></div>
-              <div className="absolute -inset-10 rounded-full border border-violet-400/30 animate-pulse"></div>
-              <div className="absolute -inset-14 rounded-full border border-indigo-400/20 animate-pulse animation-delay-1000"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/40 to-violet-500/40 rounded-full filter blur-xl -z-10 animate-pulse"></div>
             </div>
           </div>
 
-          {/* Hero Content */}
-          <div className="text-center lg:text-left animate-slide-in-right">
-            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Abhishek
-              <span className="block bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent neon-text">
-                Dwivedi
-              </span>
-            </h1>
-            
-            <div className="text-2xl lg:text-3xl text-slate-300 mb-4 font-medium h-12">
-              <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent typing-animation">
-                {roles[currentRole]}
-              </span>
-            </div>
-            
-            <p className="text-lg text-slate-400 mb-8 max-w-2xl leading-relaxed">
-              Building fast, scalable, and human-centered web solutions with cutting-edge technologies. 
-              Passionate about creating seamless user experiences and robust systems.
-            </p>
+          {/* Name in single line */}
+          <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 animate-slide-in-right">
+            <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">
+              Abhishek Dwivedi
+            </span>
+          </h1>
 
-            {/* Enhanced Social Links */}
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              {socialLinks.map((link, index) => {
-                const IconComponent = link.icon;
-                return (
-                  <Button
-                    key={link.name}
-                    asChild
-                    className={`${link.className} hover:scale-110 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 btn-pulse font-semibold px-6 py-3`}
-                    style={{ animationDelay: `${index * 150}ms` }}
-                  >
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <IconComponent size={20} />
-                      {link.name}
-                    </a>
-                  </Button>
-                );
-              })}
-            </div>
+          <h2 className="text-2xl lg:text-3xl text-slate-300 mb-8 animate-fade-in" style={{ animationDelay: '200ms' }}>
+            Full-Stack Developer & CS Student
+          </h2>
 
-            {/* Location Info */}
-            <div className="mt-8 p-4 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl border border-purple-400/20 backdrop-blur-sm">
-              <p className="text-slate-300 text-sm">
-                📍 <span className="text-purple-400 font-semibold">Mathura, Uttar Pradesh</span> • 
-                📧 <span className="text-violet-400 font-semibold">abhishek.dwivedi2022@glbajajgroup.org</span> • 
-                📱 <span className="text-indigo-400 font-semibold">+91 9026019016</span>
-              </p>
-            </div>
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-in" style={{ animationDelay: '400ms' }}>
+            Building scalable web applications with modern technologies. 
+            Passionate about AI, automation, and creating solutions that make a difference.
+          </p>
+
+          {/* Enhanced CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 animate-fade-in" style={{ animationDelay: '600ms' }}>
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-purple-500 to-violet-500 hover:from-purple-400 hover:to-violet-400 text-white px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl neon-glow"
+              asChild
+            >
+              <a href="#contact" className="flex items-center gap-3">
+                <Mail className="w-5 h-5" />
+                Get In Touch
+              </a>
+            </Button>
+            
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-2 border-purple-400/50 text-purple-400 hover:bg-purple-400/10 hover:border-purple-400 px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300"
+              asChild
+            >
+              <a href="#resume" className="flex items-center gap-3">
+                <Download className="w-5 h-5" />
+                Download Resume
+              </a>
+            </Button>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex justify-center gap-6 mb-16 animate-fade-in" style={{ animationDelay: '800ms' }}>
+            {[
+              { icon: Github, href: "https://github.com/abhishekdwivedi2022", label: "GitHub" },
+              { icon: Linkedin, href: "#", label: "LinkedIn" }
+            ].map((social) => {
+              const IconComponent = social.icon;
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 bg-gradient-to-r from-slate-800/80 to-slate-700/80 rounded-full hover:from-purple-500/20 hover:to-violet-500/20 transition-all duration-300 hover:scale-110 border border-slate-600/50 hover:border-purple-400/50 neon-glow"
+                  aria-label={social.label}
+                >
+                  <IconComponent className="w-6 h-6 text-slate-400 hover:text-purple-400 transition-colors" />
+                </a>
+              );
+            })}
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="animate-bounce">
+            <a href="#about" className="inline-flex items-center gap-2 text-slate-400 hover:text-purple-400 transition-colors">
+              <span className="text-sm">Scroll to explore</span>
+              <ArrowDown className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>
