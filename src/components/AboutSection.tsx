@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -8,59 +9,34 @@ const AboutSection = () => {
   const [isEducationExpanded, setIsEducationExpanded] = useState(false);
 
   const skills = [
-    { 
-      category: "Frontend", 
-      items: ["HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Tailwind CSS"],
-      gradient: "from-purple-900/50 via-purple-800/40 to-violet-900/50",
-      borderColor: "border-purple-500/40 hover:border-purple-400/70"
-    },
-    { 
-      category: "Backend", 
-      items: ["Node.js", "Express.js"],
-      gradient: "from-violet-900/50 via-violet-800/40 to-indigo-900/50",
-      borderColor: "border-violet-500/40 hover:border-violet-400/70"
-    },
-    { 
-      category: "Databases", 
-      items: ["MongoDB", "MySQL"],
-      gradient: "from-indigo-900/50 via-indigo-800/40 to-blue-900/50",
-      borderColor: "border-indigo-500/40 hover:border-indigo-400/70"
-    },
-    { 
-      category: "Programming Languages", 
-      items: ["Java", "Python", "C"],
-      gradient: "from-blue-900/50 via-blue-800/40 to-cyan-900/50",
-      borderColor: "border-blue-500/40 hover:border-blue-400/70"
-    },
-    { 
-      category: "Tools & Others", 
-      items: ["Git", "GitHub", "REST APIs", "OOP", "SDLC", "AI/ML"],
-      gradient: "from-cyan-900/50 via-teal-800/40 to-emerald-900/50",
-      borderColor: "border-cyan-500/40 hover:border-cyan-400/70"
-    }
+    { category: "Frontend", items: ["HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Tailwind CSS"] },
+    { category: "Backend", items: ["Node.js", "Express.js"] },
+    { category: "Databases", items: ["MongoDB", "MySQL"] },
+    { category: "Programming Languages", items: ["Java", "Python", "C"] },
+    { category: "Tools & Others", items: ["Git", "GitHub", "REST APIs", "OOP", "SDLC", "AI/ML"] }
   ];
 
   const achievements = [
-    { icon: Code, text: "200+ DSA Problems Solved", color: "text-purple-400", bg: "from-purple-500/15 to-purple-600/25" },
-    { icon: Trophy, text: "2 Hackathon Participations", color: "text-violet-400", bg: "from-violet-500/15 to-violet-600/25" },
-    { icon: Users, text: "Agile Team Leadership", color: "text-indigo-400", bg: "from-indigo-500/15 to-indigo-600/25" },
-    { icon: GraduationCap, text: "CGPA: 7.72/10", color: "text-blue-400", bg: "from-blue-500/15 to-blue-600/25" },
-    { icon: Award, text: "Full-Stack Development", color: "text-cyan-400", bg: "from-cyan-500/15 to-cyan-600/25" },
-    { icon: Brain, text: "AI/ML Enthusiast", color: "text-teal-400", bg: "from-teal-500/15 to-teal-600/25" }
+    { icon: Code, text: "200+ DSA Problems Solved", color: "text-purple-400", bg: "from-purple-500/10 to-purple-600/10" },
+    { icon: Trophy, text: "2 Hackathon Participations", color: "text-violet-400", bg: "from-violet-500/10 to-violet-600/10" },
+    { icon: Users, text: "Agile Team Leadership", color: "text-indigo-400", bg: "from-indigo-500/10 to-indigo-600/10" },
+    { icon: GraduationCap, text: "CGPA: 7.72/10", color: "text-blue-400", bg: "from-blue-500/10 to-blue-600/10" },
+    { icon: Award, text: "Full-Stack Development", color: "text-cyan-400", bg: "from-cyan-500/10 to-cyan-600/10" },
+    { icon: Brain, text: "AI/ML Enthusiast", color: "text-teal-400", bg: "from-teal-500/10 to-teal-600/10" }
   ];
 
   const interests = [
-    { icon: Target, text: "AI & Automation", color: "text-purple-400", bg: "from-purple-500/30 to-violet-500/40" },
-    { icon: Lightbulb, text: "Future-Forward Development", color: "text-violet-400", bg: "from-violet-500/30 to-indigo-500/40" }
+    { icon: Target, text: "AI & Automation", color: "text-purple-400", bg: "from-purple-500/20 to-violet-500/20" },
+    { icon: Lightbulb, text: "Future-Forward Development", color: "text-violet-400", bg: "from-violet-500/20 to-indigo-500/20" }
   ];
 
   return (
     <section className="py-20 relative overflow-hidden" id="about">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-10 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-violet-500/30 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-r from-indigo-500/20 to-purple-500/30 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-1/3 left-1/3 w-60 h-60 bg-gradient-to-r from-blue-500/15 to-cyan-500/25 rounded-full filter blur-3xl animate-blob animation-delay-1000"></div>
+        <div className="absolute top-20 right-10 w-80 h-80 bg-gradient-to-r from-purple-500/15 to-violet-500/15 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-r from-indigo-500/15 to-purple-500/15 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-1/3 left-1/3 w-60 h-60 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full filter blur-3xl animate-blob animation-delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -86,20 +62,17 @@ const AboutSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Enhanced Education Timeline */}
-          <Card className="bg-gradient-to-br from-purple-900/60 via-purple-800/50 to-violet-900/60 backdrop-blur-sm border-2 border-purple-500/40 hover:border-purple-400/70 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 animate-fade-in overflow-hidden">
+          <Card className="glass-card hover-glow transition-all duration-500 animate-fade-in border-2 border-transparent hover:border-purple-400/50 overflow-hidden">
             <div className="h-3 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500"></div>
-            <CardContent className="p-8 relative">
-              {/* Animated background glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-violet-500/10 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div className="flex items-center gap-4 mb-6 relative z-10">
-                <div className="p-4 bg-gradient-to-r from-purple-500 to-violet-500 rounded-xl shadow-lg animate-pulse">
+            <CardContent className="p-8 bg-gradient-to-br from-slate-800/90 to-slate-900/90">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-4 bg-gradient-to-r from-purple-500 to-violet-500 rounded-xl shadow-lg">
                   <GraduationCap className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white">Education</h3>
               </div>
               
-              <div className="space-y-6 relative z-10">
+              <div className="space-y-6">
                 <div className="relative pl-8 border-l-2 border-gradient-to-b from-purple-400 to-violet-400">
                   <div className="absolute -left-3 top-0 w-6 h-6 bg-gradient-to-r from-purple-500 to-violet-500 rounded-full animate-pulse shadow-lg"></div>
                   <div className="space-y-3">
@@ -189,14 +162,13 @@ const AboutSection = () => {
           {/* Enhanced Skills & Achievements */}
           <div className="space-y-6">
             {skills.map((skillGroup, index) => (
-              <Card key={skillGroup.category} className={`bg-gradient-to-br ${skillGroup.gradient} backdrop-blur-sm border-2 ${skillGroup.borderColor} hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 animate-fade-in`} style={{ animationDelay: `${index * 200}ms` }}>
-                <CardContent className="p-6 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-violet-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-                  <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2 relative z-10">
-                    <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full animate-pulse"></div>
+              <Card key={skillGroup.category} className="glass-card hover-glow transition-all duration-500 animate-fade-in border border-slate-700/50 hover:border-purple-400/50" style={{ animationDelay: `${index * 200}ms` }}>
+                <CardContent className="p-6 bg-gradient-to-br from-slate-800/80 to-slate-900/80">
+                  <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-violet-400 rounded-full"></div>
                     {skillGroup.category}
                   </h3>
-                  <div className="flex flex-wrap gap-2 relative z-10">
+                  <div className="flex flex-wrap gap-2">
                     {skillGroup.items.map((skill) => (
                       <Badge key={skill} className="bg-gradient-to-r from-slate-700/80 to-slate-600/80 text-slate-300 hover:from-slate-600/80 hover:to-slate-500/80 transition-all duration-300 border border-slate-600/50 hover:border-purple-400/50 px-3 py-1">
                         {skill}
@@ -208,19 +180,18 @@ const AboutSection = () => {
             ))}
 
             {/* Enhanced Achievements */}
-            <Card className="bg-gradient-to-br from-violet-900/60 via-violet-800/50 to-indigo-900/60 backdrop-blur-sm border-2 border-violet-500/40 hover:border-violet-400/70 hover:shadow-2xl hover:shadow-violet-500/30 transition-all duration-500 animate-fade-in">
-              <CardContent className="p-6 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-indigo-500/10 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-                <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2 relative z-10">
-                  <div className="w-2 h-2 bg-gradient-to-r from-violet-400 to-indigo-400 rounded-full animate-pulse"></div>
+            <Card className="glass-card hover-glow transition-all duration-500 animate-fade-in border border-slate-700/50 hover:border-violet-400/50">
+              <CardContent className="p-6 bg-gradient-to-br from-slate-800/80 to-slate-900/80">
+                <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                  <div className="w-2 h-2 bg-gradient-to-r from-violet-400 to-indigo-400 rounded-full"></div>
                   Highlights & Achievements
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {achievements.map((achievement, index) => {
                     const IconComponent = achievement.icon;
                     return (
-                      <div key={index} className={`flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r ${achievement.bg} hover:scale-105 transition-all duration-300 border border-slate-700/30 hover:border-purple-400/30 backdrop-blur-sm`}>
-                        <IconComponent className={`w-6 h-6 ${achievement.color} flex-shrink-0 animate-bounce`} />
+                      <div key={index} className={`flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r ${achievement.bg} hover:scale-105 transition-all duration-300 border border-slate-700/30 hover:border-purple-400/30`}>
+                        <IconComponent className={`w-6 h-6 ${achievement.color} flex-shrink-0`} />
                         <span className="text-sm text-slate-300 font-medium">{achievement.text}</span>
                       </div>
                     );
@@ -230,19 +201,18 @@ const AboutSection = () => {
             </Card>
 
             {/* Enhanced Interests */}
-            <Card className="bg-gradient-to-br from-indigo-900/60 via-indigo-800/50 to-blue-900/60 backdrop-blur-sm border-2 border-indigo-500/40 hover:border-indigo-400/70 hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-500 animate-fade-in">
-              <CardContent className="p-6 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-blue-500/10 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2 relative z-10">
-                  <div className="w-2 h-2 bg-gradient-to-r from-indigo-400 to-blue-400 rounded-full animate-pulse"></div>
+            <Card className="glass-card hover-glow transition-all duration-500 animate-fade-in border border-slate-700/50 hover:border-indigo-400/50">
+              <CardContent className="p-6 bg-gradient-to-br from-slate-800/80 to-slate-900/80">
+                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                  <div className="w-2 h-2 bg-gradient-to-r from-indigo-400 to-blue-400 rounded-full"></div>
                   Interests & Passions
                 </h3>
-                <div className="space-y-3 relative z-10">
+                <div className="space-y-3">
                   {interests.map((interest, index) => {
                     const IconComponent = interest.icon;
                     return (
-                      <div key={index} className={`flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r ${interest.bg} hover:scale-105 transition-all duration-300 border border-slate-700/30 hover:border-indigo-400/30 backdrop-blur-sm`}>
-                        <IconComponent className={`w-6 h-6 ${interest.color} flex-shrink-0 animate-pulse`} />
+                      <div key={index} className={`flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r ${interest.bg} hover:scale-105 transition-all duration-300 border border-slate-700/30 hover:border-indigo-400/30`}>
+                        <IconComponent className={`w-6 h-6 ${interest.color} flex-shrink-0`} />
                         <span className="text-sm text-slate-300 font-medium">{interest.text}</span>
                       </div>
                     );
