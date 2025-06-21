@@ -81,7 +81,7 @@ const HeroSection = () => {
           <div className="flex justify-center lg:justify-start animate-fade-in">
             <div className="relative">
               <div className="w-64 h-64 rounded-full bg-gradient-to-br from-purple-400 via-violet-500 to-indigo-400 p-1 animate-float neon-glow shadow-2xl">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-5xl font-bold gradient-text border-2 border-purple-400/20">
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-indigo-900 to-purple-900 flex items-center justify-center text-5xl font-bold gradient-text border-2 border-purple-400/20">
                   AD
                 </div>
               </div>
@@ -94,20 +94,20 @@ const HeroSection = () => {
 
           {/* Hero Content */}
           <div className="text-center lg:text-left animate-slide-in-right">
-            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Abhishek
-              <span className="block bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent neon-text">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <span className="text-white">Abhishek </span>
+              <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent neon-text">
                 Dwivedi
               </span>
             </h1>
             
-            <div className="text-2xl lg:text-3xl text-slate-300 mb-4 font-medium h-12">
+            <div className="text-2xl lg:text-3xl mb-4 font-medium h-12">
               <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent typing-animation">
                 {roles[currentRole]}
               </span>
             </div>
             
-            <p className="text-lg text-slate-400 mb-8 max-w-2xl leading-relaxed">
+            <p className="text-lg text-purple-100 mb-8 max-w-2xl leading-relaxed">
               Building fast, scalable, and human-centered web solutions with cutting-edge technologies. 
               Passionate about creating seamless user experiences and robust systems.
             </p>
@@ -138,11 +138,11 @@ const HeroSection = () => {
             </div>
 
             {/* Location Info */}
-            <div className="mt-8 p-4 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl border border-purple-400/20 backdrop-blur-sm">
-              <p className="text-slate-300 text-sm">
-                📍 <span className="text-purple-400 font-semibold">Mathura, Uttar Pradesh</span> • 
-                📧 <span className="text-violet-400 font-semibold">abhishek.dwivedi2022@glbajajgroup.org</span> • 
-                📱 <span className="text-indigo-400 font-semibold">+91 9026019016</span>
+            <div className="mt-8 p-4 bg-gradient-to-r from-purple-900/50 to-indigo-900/50 rounded-xl border border-purple-400/20 backdrop-blur-sm">
+              <p className="text-purple-100 text-sm">
+                📍 <span className="text-purple-300 font-semibold">Mathura, Uttar Pradesh</span> • 
+                📧 <span className="text-violet-300 font-semibold">abhishek.dwivedi2022@glbajajgroup.org</span> • 
+                📱 <span className="text-indigo-300 font-semibold">+91 9026019016</span>
               </p>
             </div>
           </div>
