@@ -5,7 +5,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Enhanced fire-impact design system with orange-red-pink gradients */
 
 @layer base {
   :root {
@@ -18,7 +18,7 @@
     --popover: 30 41 59;
     --popover-foreground: 226 232 240;
 
-    --primary: 6 182 212;
+    --primary: 249 115 22;
     --primary-foreground: 15 23 42;
 
     --secondary: 51 65 85;
@@ -27,7 +27,7 @@
     --muted: 51 65 85;
     --muted-foreground: 148 163 184;
 
-    --accent: 14 165 233;
+    --accent: 239 68 68;
     --accent-foreground: 15 23 42;
 
     --destructive: 239 68 68;
@@ -35,7 +35,7 @@
 
     --border: 51 65 85;
     --input: 51 65 85;
-    --ring: 6 182 212;
+    --ring: 249 115 22;
 
     --radius: 0.75rem;
   }
@@ -47,8 +47,9 @@
   }
 
   body {
-    @apply bg-slate-900 text-slate-100 font-sans;
+    @apply bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900 text-slate-100 font-sans;
     font-family: 'Poppins', system-ui, sans-serif;
+    background-attachment: fixed;
   }
 
   html {
@@ -56,7 +57,7 @@
   }
 }
 
-/* Custom utility classes */
+/* Fire-impact utility classes */
 @layer utilities {
   .animation-delay-1000 {
     animation-delay: 1s;
@@ -74,37 +75,57 @@
     animation-delay: 4s;
   }
 
+  /* Fire gradient text effects */
   .gradient-text {
-    @apply bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent;
   }
 
-  .gradient-text-purple {
-    @apply bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 bg-clip-text text-transparent;
+  .gradient-text-fire {
+    @apply bg-gradient-to-r from-orange-500 via-red-500 to-rose-500 bg-clip-text text-transparent;
   }
 
-  /* Glassmorphism effect */
+  .gradient-text-ember {
+    @apply bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 bg-clip-text text-transparent;
+  }
+
+  /* Enhanced glassmorphism with fire tones */
   .glass {
     background: rgba(51, 65, 85, 0.1);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(6, 182, 212, 0.2);
+    border: 1px solid rgba(249, 115, 22, 0.2);
   }
 
   .glass-card {
     background: rgba(30, 41, 59, 0.4);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(6, 182, 212, 0.3);
+    border: 1px solid rgba(249, 115, 22, 0.3);
   }
 
-  /* Neon glow effects */
+  .glass-fire {
+    background: rgba(51, 65, 85, 0.15);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    box-shadow: 0 8px 32px rgba(249, 115, 22, 0.1);
+  }
+
+  /* Fire neon glow effects */
   .neon-glow {
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.1);
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.3), 0 0 40px rgba(249, 115, 22, 0.1);
+  }
+
+  .neon-glow-fire {
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.4), 0 0 60px rgba(249, 115, 22, 0.2);
   }
 
   .neon-text {
-    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5), 0 0 20px rgba(6, 182, 212, 0.3);
+    text-shadow: 0 0 10px rgba(249, 115, 22, 0.5), 0 0 20px rgba(249, 115, 22, 0.3);
   }
 
-  /* Particle background */
+  .neon-text-fire {
+    text-shadow: 0 0 15px rgba(239, 68, 68, 0.6), 0 0 30px rgba(249, 115, 22, 0.4);
+  }
+
+  /* Enhanced particle background with fire colors */
   .particles {
     position: absolute;
     width: 100%;
@@ -115,26 +136,34 @@
 
   .particle {
     position: absolute;
-    background: radial-gradient(circle, rgba(6, 182, 212, 0.8) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.8) 0%, transparent 70%);
     border-radius: 50%;
     animation: float 6s ease-in-out infinite;
   }
 
-  .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; }
-  .particle:nth-child(2) { width: 6px; height: 6px; left: 20%; animation-delay: 2s; }
-  .particle:nth-child(3) { width: 3px; height: 3px; left: 30%; animation-delay: 4s; }
-  .particle:nth-child(4) { width: 5px; height: 5px; left: 40%; animation-delay: 1s; }
-  .particle:nth-child(5) { width: 4px; height: 4px; left: 50%; animation-delay: 3s; }
-  .particle:nth-child(6) { width: 6px; height: 6px; left: 60%; animation-delay: 5s; }
-  .particle:nth-child(7) { width: 3px; height: 3px; left: 70%; animation-delay: 1.5s; }
-  .particle:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-delay: 3.5s; }
-  .particle:nth-child(9) { width: 4px; height: 4px; left: 90%; animation-delay: 2.5s; }
+  .particle:nth-child(odd) {
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.8) 0%, transparent 70%);
+  }
 
-  /* Hover effects */
+  .particle:nth-child(3n) {
+    background: radial-gradient(circle, rgba(251, 146, 60, 0.8) 0%, transparent 70%);
+  }
+
+  .particle:nth-child(5n) {
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.8) 0%, transparent 70%);
+  }
+
+  /* Fire hover effects */
   .hover-glow:hover {
-    box-shadow: 0 0 30px rgba(6, 182, 212, 0.4), 0 0 60px rgba(6, 182, 212, 0.2);
-    transform: translateY(-2px);
-    transition: all 0.3s ease;
+    box-shadow: 0 0 40px rgba(249, 115, 22, 0.5), 0 0 80px rgba(239, 68, 68, 0.3);
+    transform: translateY(-4px);
+    transition: all 0.4s ease;
+  }
+
+  .hover-fire:hover {
+    box-shadow: 0 0 50px rgba(239, 68, 68, 0.6), 0 0 100px rgba(249, 115, 22, 0.4);
+    transform: translateY(-6px) scale(1.02);
+    transition: all 0.5s ease;
   }
 
   /* Scroll reveal animations */
@@ -149,21 +178,54 @@
     transform: translateY(0);
   }
 
-  /* Typing animation */
+  /* Enhanced typing animation */
   .typing-animation::after {
     content: '|';
     animation: blink 1s infinite;
+    color: #f97316;
   }
 
   @keyframes blink {
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
   }
+
+  /* Fire pulse animation */
+  .fire-pulse {
+    animation: fire-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes fire-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 40px rgba(239, 68, 68, 0.5);
+      transform: scale(1.05);
+    }
+  }
+
+  /* Flame flicker effect */
+  .flame-flicker {
+    animation: flame-flicker 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes flame-flicker {
+    0% { 
+      filter: brightness(1) saturate(1);
+      transform: scale(1);
+    }
+    100% { 
+      filter: brightness(1.2) saturate(1.3);
+      transform: scale(1.02);
+    }
+  }
 }
 
-/* Custom scrollbar */
+/* Enhanced scrollbar with fire theme */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -171,41 +233,65 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-cyan-500 to-teal-500 rounded-full;
+  @apply bg-gradient-to-b from-orange-500 via-red-500 to-pink-500 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply from-cyan-400 to-teal-400;
+  @apply from-orange-400 via-red-400 to-pink-400;
 }
 
-/* Loading states */
+/* Loading states with fire theme */
 .loading-skeleton {
-  @apply animate-pulse bg-slate-700 rounded;
+  @apply animate-pulse bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 rounded;
 }
 
 /* Focus states for accessibility */
 .focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900;
+  @apply focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-slate-900;
 }
 
-/* Button animations */
+/* Enhanced button animations */
 .btn-pulse:hover {
-  animation: pulse-glow 2s infinite;
+  animation: fire-btn-pulse 2s infinite;
 }
 
-@keyframes pulse-glow {
-  0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.4); }
-  70% { box-shadow: 0 0 0 20px rgba(6, 182, 212, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
+@keyframes fire-btn-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+  70% { box-shadow: 0 0 0 25px rgba(249, 115, 22, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
 }
 
-/* Wave animation */
-.wave {
-  background: linear-gradient(-45deg, transparent, rgba(6, 182, 212, 0.1), transparent);
-  animation: wave 3s ease-in-out infinite;
+/* Fire wave animation */
+.wave-fire {
+  background: linear-gradient(-45deg, transparent, rgba(249, 115, 22, 0.15), rgba(239, 68, 68, 0.1), transparent);
+  animation: wave-fire 4s ease-in-out infinite;
 }
 
-@keyframes wave {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+@keyframes wave-fire {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(200%) skewX(-15deg); }
+}
+
+/* Ember floating effect */
+.ember-float {
+  animation: ember-float 8s ease-in-out infinite;
+}
+
+@keyframes ember-float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+  25% { 
+    transform: translateY(-30px) rotate(90deg);
+    opacity: 1;
+  }
+  50% { 
+    transform: translateY(-15px) rotate(180deg);
+    opacity: 0.8;
+  }
+  75% { 
+    transform: translateY(-25px) rotate(270deg);
+    opacity: 0.9;
+  }
 }

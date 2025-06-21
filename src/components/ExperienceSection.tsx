@@ -1,7 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Building, Calendar, MapPin, Trophy, Code, Users } from "lucide-react";
+import { Building, Calendar, MapPin, Briefcase, Zap, Trophy, Users } from "lucide-react";
 
 const ExperienceSection = () => {
   const experiences = [
@@ -11,178 +11,166 @@ const ExperienceSection = () => {
       period: "May 2023 - July 2023",
       location: "Remote",
       type: "Internship",
-      description: "Built a full-stack PG Finder App using React.js, Node.js, MySQL with advanced search and filtering capabilities. Used AJAX for dynamic filtering and seamless UX. Worked in a 3-member Agile team using GitHub for version control. Reduced user search time by 30% and improved responsiveness.",
+      icon: "💻",
       achievements: [
-        "Built full-stack PG Finder application from scratch using React.js, Node.js, MySQL",
-        "Implemented real-time search and filtering using AJAX for seamless user experience",
-        "Collaborated with 3-member Agile team using GitHub for version control and project management",
-        "Reduced user search time by 30% and significantly improved application responsiveness",
-        "Gained hands-on experience with React ecosystem, database management, and API integration",
-        "Applied SDLC principles and Agile methodology in real-world development environment"
+        "Built a full-stack PG Finder App using React.js, Node.js, MySQL",
+        "Used AJAX for dynamic filtering and seamless UX",
+        "Worked in a 3-member Agile team using GitHub for version control",
+        "Reduced user search time by 30% and improved responsiveness"
       ],
-      technologies: ["React.js", "Node.js", "MySQL", "AJAX", "Git", "GitHub", "Agile", "SDLC"],
-      icon: Building,
-      gradient: "from-blue-500 to-purple-600",
-      bgGradient: "from-blue-500/10 to-purple-600/10"
+      technologies: ["React.js", "Node.js", "MySQL", "AJAX", "Git", "GitHub", "Agile"],
+      gradient: "from-orange-500 to-red-500"
     }
   ];
 
   const additionalExperience = [
     {
       title: "Hackathon Participation",
-      description: "Participated in 2 full-stack hackathons, building complete applications within 48-hour constraints using Agile development practices",
-      details: "Built innovative solutions under time pressure, collaborated with diverse teams, and implemented full-stack features rapidly",
-      icon: Trophy,
-      color: "text-yellow-400",
-      bgColor: "from-yellow-500/20 to-orange-500/20",
-      achievements: ["2 Full-Stack Projects", "48-Hour Development", "Team Collaboration", "Rapid Prototyping"]
+      description: "Built 2 full-stack projects in 48-hour constraints",
+      icon: "🚀",
+      color: "from-red-500 to-pink-500",
+      achievements: ["2 Full-Stack Projects", "48-Hour Development", "Team Collaboration"]
     },
     {
-      title: "Problem Solving & DSA",
-      description: "Consistent problem solver with 200+ DSA problems solved across LeetCode and GeeksforGeeks platforms",
-      details: "Strong focus on algorithmic thinking, data structures mastery, and real-world application of problem-solving skills",
-      icon: Code,
-      color: "text-emerald-400",
-      bgColor: "from-emerald-500/20 to-teal-500/20",
-      achievements: ["200+ Problems Solved", "Algorithm Mastery", "Coding Competitions", "Technical Interview Prep"]
-    },
-    {
-      title: "Team Leadership & Collaboration",
-      description: "Experience in leading development teams and collaborating in Agile environments with strong communication skills",
-      details: "Led cross-functional teams, mentored junior developers, and facilitated effective project delivery",
-      icon: Users,
-      color: "text-purple-400",
-      bgColor: "from-purple-500/20 to-pink-500/20",
-      achievements: ["Team Leadership", "Agile Methodology", "Cross-functional Collaboration", "Project Management"]
+      title: "Problem Solving Expertise",
+      description: "200+ DSA problems solved across platforms",
+      icon: "🧠",
+      color: "from-pink-500 to-rose-500",
+      achievements: ["200+ Problems Solved", "Algorithm Mastery", "Coding Competitions"]
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden" id="experience">
-      {/* Enhanced Background */}
+    <section className="py-20 bg-gradient-to-b from-slate-900 via-gray-900 to-slate-900 relative overflow-hidden" id="experience">
+      {/* Fire Effect Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-20 right-10 w-80 h-80 bg-gradient-to-r from-orange-500/15 via-red-500/25 to-pink-500/15 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-r from-red-500/20 via-rose-500/30 to-orange-500/20 rounded-full filter blur-3xl animate-pulse animation-delay-3000"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Professional <span className="bg-gradient-to-r from-purple-600 to-cyan-500 bg-clip-text text-transparent">Experience</span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Professional <span className="bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent">Journey</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            My journey in web development through internships, projects, and continuous learning in the tech industry.
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Building experience through hands-on development and continuous learning.
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          {/* Enhanced Main Experience */}
-          {experiences.map((exp, index) => {
-            const IconComponent = exp.icon;
-            return (
-              <Card 
-                key={index}
-                className="mb-12 shadow-2xl hover:shadow-3xl transition-all duration-500 animate-fade-in border-0 overflow-hidden hover:-translate-y-2"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <div className={`h-3 bg-gradient-to-r ${exp.gradient}`}></div>
-                <CardContent className="p-10 bg-gradient-to-br from-white to-gray-50">
-                  <div className="flex flex-col lg:flex-row lg:items-start gap-8">
-                    <div className={`p-6 bg-gradient-to-br ${exp.gradient} rounded-2xl flex-shrink-0 shadow-lg`}>
-                      <IconComponent className="w-10 h-10 text-white" />
-                    </div>
-                    
-                    <div className="flex-1">
-                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-6">
-                        <div>
-                          <h3 className="text-3xl font-bold text-gray-900 mb-3">{exp.role}</h3>
-                          <h4 className="text-2xl text-gray-700 font-semibold">{exp.company}</h4>
-                        </div>
-                        
-                        <div className="flex flex-col gap-3">
-                          <div className="flex items-center gap-3 text-gray-600">
-                            <Calendar className="w-5 h-5 text-blue-500" />
-                            <span className="font-medium">{exp.period}</span>
-                          </div>
-                          <div className="flex items-center gap-3 text-gray-600">
-                            <MapPin className="w-5 h-5 text-emerald-500" />
-                            <span className="font-medium">{exp.location}</span>
-                          </div>
-                          <Badge className="w-fit bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-4 py-2">
-                            {exp.type}
-                          </Badge>
-                        </div>
-                      </div>
-                      
-                      <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                        {exp.description}
-                      </p>
-                      
-                      <div className="mb-8">
-                        <h5 className="text-xl font-semibold text-gray-900 mb-4">Key Achievements & Impact</h5>
-                        <div className="grid gap-3">
-                          {exp.achievements.map((achievement, achievementIndex) => (
-                            <div key={achievementIndex} className="flex items-start gap-4 p-4 bg-gradient-to-r from-gray-50 to-white rounded-lg border border-gray-200 hover:border-purple-300 transition-colors">
-                              <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-gray-700 leading-relaxed">{achievement}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h5 className="text-xl font-semibold text-gray-900 mb-4">Technologies & Skills Used</h5>
-                        <div className="flex flex-wrap gap-3">
-                          {exp.technologies.map((tech) => (
-                            <Badge key={tech} className="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 hover:from-purple-100 hover:to-cyan-100 hover:text-purple-800 transition-all duration-300 px-4 py-2 text-sm font-medium">
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
-
-          {/* Enhanced Additional Experience */}
-          <div className="grid md:grid-cols-3 gap-8 mt-16">
-            {additionalExperience.map((item, index) => {
-              const IconComponent = item.icon;
-              return (
-                <Card 
-                  key={index}
-                  className="p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 animate-fade-in border-0 overflow-hidden group"
-                  style={{ animationDelay: `${(index + 1) * 200}ms` }}
-                >
-                  <div className={`h-2 bg-gradient-to-r ${item.bgColor} mb-6`}></div>
-                  <CardContent className="p-0">
-                    <div className="flex items-start gap-4 mb-6">
-                      <div className={`p-4 bg-gradient-to-r ${item.bgColor} rounded-xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent className={`w-8 h-8 ${item.color}`} />
-                      </div>
+        <div className="max-w-4xl mx-auto">
+          {/* Main Experience Timeline */}
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-500 via-red-500 to-pink-500 rounded-full"></div>
+            
+            {experiences.map((exp, index) => (
+              <div key={index} className="relative mb-12 animate-fade-in" style={{ animationDelay: `${index * 200}ms` }}>
+                {/* Timeline Dot */}
+                <div className="absolute left-6 w-5 h-5 bg-gradient-to-r from-orange-500 to-red-500 rounded-full border-4 border-slate-900 shadow-lg shadow-orange-500/50"></div>
+                
+                <Card className="ml-20 bg-gradient-to-br from-slate-800/90 to-slate-900/90 border border-slate-700/50 hover:border-orange-500/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange-500/20">
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-6 mb-6">
+                      <div className="text-4xl animate-bounce">{exp.icon}</div>
                       <div className="flex-1">
-                        <h4 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h4>
-                        <p className="text-gray-600 text-sm leading-relaxe mb-4">{item.description}</p>
-                        <p className="text-gray-500 text-xs leading-relaxed">{item.details}</p>
+                        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
+                          <div>
+                            <h3 className="text-2xl font-bold text-white mb-2">{exp.role}</h3>
+                            <h4 className="text-xl text-orange-400 font-semibold">{exp.company}</h4>
+                          </div>
+                          <div className="flex flex-col gap-2">
+                            <div className="flex items-center gap-2 text-slate-300">
+                              <Calendar className="w-4 h-4 text-orange-400" />
+                              <span>{exp.period}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-slate-300">
+                              <MapPin className="w-4 h-4 text-red-400" />
+                              <span>{exp.location}</span>
+                            </div>
+                            <Badge className={`w-fit bg-gradient-to-r ${exp.gradient} text-white`}>
+                              {exp.type}
+                            </Badge>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     
-                    <div className="space-y-2">
-                      <h6 className="text-sm font-semibold text-gray-800 mb-2">Key Highlights:</h6>
-                      {item.achievements.map((achievement, achIndex) => (
-                        <div key={achIndex} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></div>
-                          <span className="text-xs text-gray-600">{achievement}</span>
-                        </div>
-                      ))}
+                    <div className="mb-6">
+                      <h5 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                        <Zap className="w-5 h-5 text-orange-400" />
+                        Key Achievements
+                      </h5>
+                      <div className="space-y-3">
+                        {exp.achievements.map((achievement, achievementIndex) => (
+                          <div 
+                            key={achievementIndex} 
+                            className="flex items-start gap-3 p-3 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-colors animate-fade-in"
+                            style={{ animationDelay: `${(achievementIndex + 1) * 200}ms` }}
+                          >
+                            <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-slate-300">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h5 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                        <Building className="w-5 h-5 text-red-400" />
+                        Technologies Used
+                      </h5>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.technologies.map((tech) => (
+                          <Badge key={tech} className="bg-slate-700/80 text-slate-300 hover:bg-gradient-to-r hover:from-orange-500/20 hover:to-red-500/20 hover:text-orange-300 transition-all duration-300">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
-              );
-            })}
+              </div>
+            ))}
+          </div>
+
+          {/* Additional Experience Cards */}
+          <div className="grid md:grid-cols-2 gap-8 mt-16">
+            {additionalExperience.map((item, index) => (
+              <Card 
+                key={index}
+                className="group bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 hover:border-orange-500/50 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/20 animate-fade-in"
+                style={{ animationDelay: `${(index + 2) * 200}ms` }}
+              >
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
+                      {item.icon}
+                    </div>
+                    <h4 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                      {item.title}
+                    </h4>
+                  </div>
+                  
+                  <p className="text-slate-400 mb-4 group-hover:text-slate-300 transition-colors">
+                    {item.description}
+                  </p>
+                  
+                  <div className="space-y-2">
+                    {item.achievements.map((achievement, achIndex) => (
+                      <div key={achIndex} className="flex items-center gap-2">
+                        <div className={`w-2 h-2 bg-gradient-to-r ${item.color} rounded-full`}></div>
+                        <span className="text-sm text-slate-300">{achievement}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className={`mt-4 h-1 bg-slate-700 rounded-full overflow-hidden`}>
+                    <div className={`h-full bg-gradient-to-r ${item.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left`}></div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
