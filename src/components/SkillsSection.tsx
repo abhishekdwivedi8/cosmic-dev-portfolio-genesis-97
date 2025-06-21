@@ -1,125 +1,76 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Server, Database, Settings, Layers, Zap } from "lucide-react";
-import { useState } from "react";
+import { Code } from "lucide-react";
 
 const SkillsSection = () => {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const skillCategories = [
-    {
-      title: "Frontend",
-      icon: Code,
-      color: "from-orange-500 to-red-600",
-      skills: [
-        { name: "HTML/CSS", icon: "🌐", desc: "Semantic markup & responsive design" },
-        { name: "JavaScript", icon: "⚡", desc: "ES6+ & DOM manipulation" },
-        { name: "TypeScript", icon: "📘", desc: "Type-safe development" },
-        { name: "React.js", icon: "⚛️", desc: "Component-based architecture" },
-        { name: "Tailwind CSS", icon: "🎨", desc: "Utility-first styling" }
-      ]
-    },
-    {
-      title: "Backend",
-      icon: Server,
-      color: "from-red-500 to-pink-600",
-      skills: [
-        { name: "Node.js", icon: "🟢", desc: "Server-side JavaScript runtime" },
-        { name: "Express.js", icon: "🚀", desc: "Fast web framework" }
-      ]
-    },
-    {
-      title: "Databases",
-      icon: Database,
-      color: "from-pink-500 to-rose-600",
-      skills: [
-        { name: "MongoDB", icon: "🍃", desc: "NoSQL document database" },
-        { name: "MySQL", icon: "🐬", desc: "Relational database management" }
-      ]
-    },
-    {
-      title: "Tools & Concepts",
-      icon: Settings,
-      color: "from-rose-500 to-orange-600",
-      skills: [
-        { name: "Git", icon: "📚", desc: "Version control system" },
-        { name: "REST APIs", icon: "🔗", desc: "RESTful web services" },
-        { name: "OOP", icon: "🏗️", desc: "Object-oriented programming" },
-        { name: "SDLC", icon: "🔄", desc: "Software development lifecycle" },
-        { name: "AI/ML", icon: "🤖", desc: "Artificial intelligence & machine learning" }
-      ]
-    }
+  const allSkills = [
+    // Frontend
+    "HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Tailwind CSS",
+    // Backend
+    "Node.js", "Express.js",
+    // Databases
+    "MongoDB", "MySQL",
+    // Programming Languages
+    "Java", "Python", "C",
+    // Tools & Concepts
+    "Git", "REST APIs", "OOP", "SDLC", "AI/ML"
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-900 via-gray-900 to-slate-900 relative overflow-hidden" id="skills">
-      {/* Fire Effect Background */}
+    <section className="py-20 bg-gradient-to-b from-[#1f1147] via-[#2d1a65] to-[#351b80] relative overflow-hidden" id="skills">
+      {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-orange-500/20 via-red-500/30 to-pink-500/20 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-red-500/25 via-rose-500/35 to-orange-500/25 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-pink-500/15 via-red-500/25 to-orange-500/15 rounded-full filter blur-3xl animate-pulse animation-delay-4000"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-[#00f0b5]/10 via-[#a66cff]/15 to-[#64ffda]/10 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-[#a66cff]/15 via-[#00f0b5]/20 to-[#64ffda]/15 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Technical <span className="bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent">Arsenal</span>
+            Technical <span className="gradient-text">Skills</span>
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#e0e0e0] max-w-3xl mx-auto leading-relaxed">
             Mastering modern technologies to build scalable and innovative solutions.
           </p>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in" style={{ animationDelay: '200ms' }}>
-          {skillCategories.map((category, index) => {
-            const IconComponent = category.icon;
-            return (
-              <button
-                key={category.title}
-                onClick={() => setActiveTab(index)}
-                className={`flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 ${
-                  activeTab === index
-                    ? `bg-gradient-to-r ${category.color} text-white shadow-lg shadow-orange-500/25`
-                    : 'bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 border border-slate-600/50'
-                }`}
-              >
-                <IconComponent className="w-5 h-5" />
-                <span className="font-medium">{category.title}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Skills Grid */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in" style={{ animationDelay: '400ms' }}>
-            {skillCategories[activeTab].skills.map((skill, index) => (
-              <Card 
-                key={skill.name}
-                className="group bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 hover:border-orange-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/20 cursor-pointer"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
-                      {skill.icon}
-                    </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-orange-400 transition-colors">
-                      {skill.name}
-                    </h3>
+        {/* Single Skills Card */}
+        <div className="max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: '200ms' }}>
+          <Card className="group glass-card hover:neon-glow-purple transition-all duration-500 hover:scale-[1.02] border-2 border-[#a66cff]/30 hover:border-[#00f0b5]/50">
+            <CardContent className="p-8">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="p-4 bg-gradient-to-r from-[#00f0b5] to-[#a66cff] rounded-xl shadow-lg group-hover:rotate-12 transition-transform duration-500">
+                  <Code className="w-8 h-8 text-black" />
+                </div>
+                <h3 className="text-2xl font-bold text-white group-hover:gradient-text transition-all duration-300">
+                  Technology Stack
+                </h3>
+              </div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                {allSkills.map((skill, index) => (
+                  <div
+                    key={skill}
+                    className="group/skill relative animate-fade-in"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    <Badge className="w-full p-3 bg-gradient-to-r from-[#2d1a65]/80 to-[#351b80]/80 text-[#e0e0e0] hover:from-[#00f0b5]/20 hover:to-[#a66cff]/20 hover:text-[#00f0b5] hover:border-[#00f0b5]/50 transition-all duration-300 border border-[#a66cff]/30 group-hover/skill:scale-110 group-hover/skill:shadow-lg group-hover/skill:shadow-[#00f0b5]/25 cursor-pointer">
+                      <span className="font-medium text-center w-full">{skill}</span>
+                    </Badge>
+                    
+                    {/* Hover glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#00f0b5]/20 to-[#a66cff]/20 opacity-0 group-hover/skill:opacity-100 rounded-full transition-opacity duration-300 blur-xl pointer-events-none"></div>
                   </div>
-                  <p className="text-slate-400 text-sm group-hover:text-slate-300 transition-colors">
-                    {skill.desc}
-                  </p>
-                  <div className="mt-4 h-1 bg-slate-700 rounded-full overflow-hidden">
-                    <div className={`h-full bg-gradient-to-r ${skillCategories[activeTab].color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                ))}
+              </div>
+              
+              {/* Bottom accent line */}
+              <div className="mt-8 h-1 bg-gradient-to-r from-transparent via-[#a66cff]/50 to-transparent rounded-full">
+                <div className="h-full bg-gradient-to-r from-[#00f0b5] to-[#a66cff] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center rounded-full"></div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
