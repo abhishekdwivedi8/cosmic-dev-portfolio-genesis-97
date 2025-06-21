@@ -19,50 +19,57 @@ const HeroSection = () => {
       name: "GitHub",
       url: "https://github.com/abhishekdwivedi2022",
       icon: Github,
-      className: "bg-slate-800 hover:bg-slate-700 text-cyan-400 border border-cyan-400/30 hover:border-cyan-400/60"
+      className: "bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-cyan-400 border-2 border-cyan-400/40 hover:border-cyan-400/80 shadow-lg hover:shadow-cyan-400/20"
     },
     {
       name: "LinkedIn",
       url: "#",
       icon: Linkedin,
-      className: "bg-slate-800 hover:bg-slate-700 text-blue-400 border border-blue-400/30 hover:border-blue-400/60"
+      className: "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white border-2 border-blue-400/40 hover:border-blue-400/80 shadow-lg hover:shadow-blue-400/20"
     },
     {
       name: "Resume",
       url: "#resume",
       icon: Download,
-      className: "bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-white"
+      className: "bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white border-2 border-emerald-400/40 hover:border-emerald-400/80 shadow-lg hover:shadow-emerald-400/20"
     },
     {
       name: "LeetCode",
       url: "https://leetcode.com/u/rkabhishekdwivedi/",
       icon: Code,
-      className: "bg-slate-800 hover:bg-slate-700 text-orange-400 border border-orange-400/30 hover:border-orange-400/60"
+      className: "bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white border-2 border-orange-400/40 hover:border-orange-400/80 shadow-lg hover:shadow-orange-400/20"
     },
     {
       name: "GFG",
       url: "https://www.geeksforgeeks.org/user/r_abhishek/",
       icon: Trophy,
-      className: "bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-400/30 hover:border-emerald-400/60"
+      className: "bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white border-2 border-green-400/40 hover:border-green-400/80 shadow-lg hover:shadow-green-400/20"
     }
   ];
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Animated Background */}
+      {/* Enhanced Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient Blobs */}
-        <div className="absolute -top-10 -left-10 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-        <div className="absolute -top-10 -right-10 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-10 left-20 w-96 h-96 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+        {/* Multiple Gradient Blobs */}
+        <div className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-r from-cyan-500/30 to-teal-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div className="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-emerald-500/30 to-cyan-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/2 right-1/4 w-60 h-60 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-1000"></div>
         
-        {/* Floating Particles */}
+        {/* Enhanced Floating Particles */}
         <div className="particles">
-          {[...Array(15)].map((_, i) => (
+          {[...Array(20)].map((_, i) => (
             <div key={i} className="particle" style={{
               left: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 6}s`,
-              animationDuration: `${6 + Math.random() * 4}s`
+              animationDuration: `${6 + Math.random() * 4}s`,
+              background: `radial-gradient(circle, ${
+                i % 4 === 0 ? 'rgba(6, 182, 212, 0.8)' :
+                i % 4 === 1 ? 'rgba(168, 85, 247, 0.8)' :
+                i % 4 === 2 ? 'rgba(34, 197, 94, 0.8)' :
+                'rgba(249, 115, 22, 0.8)'
+              } 0%, transparent 70%)`
             }}></div>
           ))}
         </div>
@@ -73,14 +80,15 @@ const HeroSection = () => {
           {/* Profile Photo */}
           <div className="flex justify-center lg:justify-start animate-fade-in">
             <div className="relative">
-              <div className="w-72 h-72 rounded-full bg-gradient-to-br from-cyan-400 via-teal-400 to-emerald-400 p-1 animate-float neon-glow">
-                <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center text-6xl font-bold gradient-text">
+              <div className="w-64 h-64 rounded-full bg-gradient-to-br from-cyan-400 via-purple-500 to-emerald-400 p-1 animate-float neon-glow shadow-2xl">
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-5xl font-bold gradient-text border-2 border-cyan-400/20">
                   AD
                 </div>
               </div>
-              {/* Decorative rings */}
-              <div className="absolute -inset-4 rounded-full border-2 border-cyan-400/30 animate-ping"></div>
-              <div className="absolute -inset-8 rounded-full border border-teal-400/20 animate-pulse"></div>
+              {/* Enhanced decorative rings */}
+              <div className="absolute -inset-6 rounded-full border-2 border-cyan-400/40 animate-ping"></div>
+              <div className="absolute -inset-10 rounded-full border border-purple-400/30 animate-pulse"></div>
+              <div className="absolute -inset-14 rounded-full border border-emerald-400/20 animate-pulse animation-delay-1000"></div>
             </div>
           </div>
 
@@ -88,13 +96,13 @@ const HeroSection = () => {
           <div className="text-center lg:text-left animate-slide-in-right">
             <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Abhishek
-              <span className="block gradient-text neon-text">
+              <span className="block bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent neon-text">
                 Dwivedi
               </span>
             </h1>
             
             <div className="text-2xl lg:text-3xl text-slate-300 mb-4 font-medium h-12">
-              <span className="gradient-text-purple typing-animation">
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 bg-clip-text text-transparent typing-animation">
                 {roles[currentRole]}
               </span>
             </div>
@@ -104,7 +112,7 @@ const HeroSection = () => {
               Passionate about creating seamless user experiences and robust systems.
             </p>
 
-            {/* Social Links */}
+            {/* Enhanced Social Links */}
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
               {socialLinks.map((link, index) => {
                 const IconComponent = link.icon;
@@ -112,8 +120,8 @@ const HeroSection = () => {
                   <Button
                     key={link.name}
                     asChild
-                    className={`${link.className} hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover-glow btn-pulse`}
-                    style={{ animationDelay: `${index * 100}ms` }}
+                    className={`${link.className} hover:scale-110 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 btn-pulse font-semibold px-6 py-3`}
+                    style={{ animationDelay: `${index * 150}ms` }}
                   >
                     <a
                       href={link.url}
@@ -121,12 +129,21 @@ const HeroSection = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2"
                     >
-                      <IconComponent size={18} />
+                      <IconComponent size={20} />
                       {link.name}
                     </a>
                   </Button>
                 );
               })}
+            </div>
+
+            {/* Location Info */}
+            <div className="mt-8 p-4 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl border border-cyan-400/20 backdrop-blur-sm">
+              <p className="text-slate-300 text-sm">
+                📍 <span className="text-cyan-400 font-semibold">Mathura, Uttar Pradesh</span> • 
+                📧 <span className="text-emerald-400 font-semibold">abhishek.dwivedi2022@glbajajgroup.org</span> • 
+                📱 <span className="text-purple-400 font-semibold">+91 9026019016</span>
+              </p>
             </div>
           </div>
         </div>
