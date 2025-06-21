@@ -17,19 +17,24 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+    // Create mailto URL with form data
+    const mailtoUrl = `mailto:abhishek.dwivedi2022@gmail.com?subject=Portfolio%20Message&body=Name:%20${encodeURIComponent(formData.name)}%0AEmail:%20${encodeURIComponent(formData.email)}%0A%0AMessage:%20${encodeURIComponent(formData.message)}`;
+    
+    // Open default email client
+    window.location.href = mailtoUrl;
+    
     setTimeout(() => {
       toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
+        title: "Email Client Opened!",
+        description: "Your default email app should open with the pre-filled message.",
       });
       setFormData({ name: "", email: "", message: "" });
       setIsSubmitting(false);
-    }, 2000);
+    }, 1000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -44,19 +49,19 @@ const ContactSection = () => {
       name: "GitHub",
       url: "https://github.com/abhishekdwivedi2022",
       icon: Github,
-      color: "hover:text-gray-900"
+      color: "hover:text-slate-300"
     },
     {
       name: "LinkedIn",
       url: "#",
       icon: Linkedin,
-      color: "hover:text-blue-600"
+      color: "hover:text-blue-400"
     },
     {
       name: "Resume",
-      url: "#",
+      url: "#resume",
       icon: Download,
-      color: "hover:text-green-600"
+      color: "hover:text-emerald-400"
     }
   ];
 
@@ -64,31 +69,37 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "abhishek.dwivedi@example.com",
-      color: "text-blue-500"
+      value: "abhishek.dwivedi2022@gmail.com",
+      color: "text-cyan-400"
     },
     {
       icon: Phone,
       label: "Phone",
       value: "+91 XXXXX XXXXX",
-      color: "text-green-500"
+      color: "text-emerald-400"
     },
     {
       icon: MapPin,
       label: "Location",
       value: "Greater Noida, India",
-      color: "text-purple-500"
+      color: "text-purple-400"
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-slate-50" id="contact">
-      <div className="container mx-auto px-6">
+    <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden" id="contact">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-64 h-64 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full filter blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Get In <span className="bg-gradient-to-r from-purple-600 to-cyan-500 bg-clip-text text-transparent">Touch</span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Get In <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
             I'm always open to discussing new opportunities, collaborations, or just having a tech chat. 
             Let's connect and build something amazing together!
           </p>
@@ -97,10 +108,10 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-8 animate-fade-in">
-            <Card className="p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border-0 bg-gradient-to-br from-white to-gray-50">
-              <CardContent className="p-0">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Let's Connect</h3>
-                <p className="text-gray-600 mb-8 leading-relaxed">
+            <Card className="glass-card hover-glow transition-all duration-300 border-0">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+                <p className="text-slate-400 mb-8 leading-relaxed">
                   I'm currently looking for new opportunities in full-stack development. 
                   Whether you have a project in mind or just want to chat about technology, 
                   I'd love to hear from you.
@@ -110,21 +121,21 @@ const ContactSection = () => {
                   {contactInfo.map((info, index) => {
                     const IconComponent = info.icon;
                     return (
-                      <div key={index} className="flex items-center gap-4">
-                        <div className={`p-3 bg-gray-100 rounded-full`}>
+                      <div key={index} className="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800/70 transition-colors">
+                        <div className="p-3 bg-gradient-to-r from-slate-700 to-slate-600 rounded-full">
                           <IconComponent className={`w-5 h-5 ${info.color}`} />
                         </div>
                         <div>
-                          <div className="text-sm text-gray-500">{info.label}</div>
-                          <div className="font-medium text-gray-900">{info.value}</div>
+                          <div className="text-sm text-slate-500">{info.label}</div>
+                          <div className="font-medium text-white">{info.value}</div>
                         </div>
                       </div>
                     );
                   })}
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-gray-200">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Follow Me</h4>
+                <div className="mt-8 pt-8 border-t border-slate-700">
+                  <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
                   <div className="flex gap-4">
                     {socialLinks.map((link) => {
                       const IconComponent = link.icon;
@@ -134,7 +145,7 @@ const ContactSection = () => {
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors ${link.color}`}
+                          className={`p-3 bg-slate-800 rounded-full hover:bg-slate-700 transition-all duration-300 hover:scale-110 ${link.color} hover-glow`}
                         >
                           <IconComponent className="w-5 h-5" />
                         </a>
@@ -152,10 +163,10 @@ const ContactSection = () => {
                 { label: "Problems Solved", value: "200+" },
                 { label: "Technologies", value: "15+" }
               ].map((stat, index) => (
-                <Card key={index} className="p-4 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
-                  <CardContent className="p-0">
-                    <div className="text-2xl font-bold text-purple-600 mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
+                <Card key={index} className="glass-card hover-glow transition-all duration-300 border-0">
+                  <CardContent className="p-4 text-center">
+                    <div className="text-2xl font-bold gradient-text mb-1">{stat.value}</div>
+                    <div className="text-sm text-slate-400">{stat.label}</div>
                   </CardContent>
                 </Card>
               ))}
@@ -163,13 +174,13 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slide-in-right border-0 bg-gradient-to-br from-white to-gray-50">
-            <CardContent className="p-0">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+          <Card className="glass-card hover-glow transition-all duration-300 animate-slide-in-right border-0">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
                     Your Name
                   </label>
                   <Input
@@ -180,12 +191,12 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your full name"
-                    className="w-full"
+                    className="bg-slate-800/50 border-slate-600 text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-cyan-400"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
                     Email Address
                   </label>
                   <Input
@@ -196,12 +207,12 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Enter your email address"
-                    className="w-full"
+                    className="bg-slate-800/50 border-slate-600 text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-cyan-400"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
                     Message
                   </label>
                   <Textarea
@@ -212,19 +223,19 @@ const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="Tell me about your project or just say hello!"
                     rows={5}
-                    className="w-full resize-none"
+                    className="bg-slate-800/50 border-slate-600 text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-cyan-400 resize-none"
                   />
                 </div>
 
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white font-medium py-3 transition-all duration-200 hover:scale-105"
+                  className="w-full bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-white font-medium py-3 transition-all duration-300 hover:scale-105 btn-pulse"
                 >
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      Sending...
+                      Opening Email...
                     </>
                   ) : (
                     <>
@@ -235,13 +246,13 @@ const ContactSection = () => {
                 </Button>
               </form>
 
-              <div className="mt-8 p-4 bg-gradient-to-r from-purple-50 to-cyan-50 rounded-lg">
+              <div className="mt-8 p-4 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-lg border border-emerald-400/20">
                 <div className="flex items-center gap-2 mb-2">
-                  <Badge variant="secondary" className="bg-green-100 text-green-700">
+                  <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-400/30">
                     Available for Work
                   </Badge>
                 </div>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-slate-400">
                   I'm currently open to full-time opportunities and freelance projects. 
                   Let's discuss how we can work together!
                 </p>

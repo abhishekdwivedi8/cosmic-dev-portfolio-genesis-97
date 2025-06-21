@@ -5,20 +5,22 @@ import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ExperienceSection from "@/components/ExperienceSection";
-import CodingStatsSection from "@/components/CodingStatsSection";
+import DSAProfilesSection from "@/components/DSAProfilesSection";
+import ResumeSection from "@/components/ResumeSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-slate-900">
       <Navigation />
       <HeroSection />
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
       <ExperienceSection />
-      <CodingStatsSection />
+      <DSAProfilesSection />
+      <ResumeSection />
       <ContactSection />
       <Footer />
     </div>
