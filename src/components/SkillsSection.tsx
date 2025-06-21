@@ -11,7 +11,7 @@ const SkillsSection = () => {
     {
       title: "Frontend",
       icon: Code,
-      color: "from-orange-500 to-red-600",
+      color: "from-purple-500 to-violet-600",
       skills: [
         { name: "HTML/CSS", icon: "🌐", desc: "Semantic markup & responsive design" },
         { name: "JavaScript", icon: "⚡", desc: "ES6+ & DOM manipulation" },
@@ -23,7 +23,7 @@ const SkillsSection = () => {
     {
       title: "Backend",
       icon: Server,
-      color: "from-red-500 to-pink-600",
+      color: "from-violet-500 to-indigo-600",
       skills: [
         { name: "Node.js", icon: "🟢", desc: "Server-side JavaScript runtime" },
         { name: "Express.js", icon: "🚀", desc: "Fast web framework" }
@@ -32,7 +32,7 @@ const SkillsSection = () => {
     {
       title: "Databases",
       icon: Database,
-      color: "from-pink-500 to-rose-600",
+      color: "from-indigo-500 to-blue-600",
       skills: [
         { name: "MongoDB", icon: "🍃", desc: "NoSQL document database" },
         { name: "MySQL", icon: "🐬", desc: "Relational database management" }
@@ -41,7 +41,7 @@ const SkillsSection = () => {
     {
       title: "Tools & Concepts",
       icon: Settings,
-      color: "from-rose-500 to-orange-600",
+      color: "from-blue-500 to-cyan-600",
       skills: [
         { name: "Git", icon: "📚", desc: "Version control system" },
         { name: "REST APIs", icon: "🔗", desc: "RESTful web services" },
@@ -53,18 +53,18 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-900 via-gray-900 to-slate-900 relative overflow-hidden" id="skills">
-      {/* Fire Effect Background */}
+    <section className="py-20 relative overflow-hidden" id="skills">
+      {/* Modern Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-orange-500/20 via-red-500/30 to-pink-500/20 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-red-500/25 via-rose-500/35 to-orange-500/25 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-pink-500/15 via-red-500/25 to-orange-500/15 rounded-full filter blur-3xl animate-pulse animation-delay-4000"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-500/20 via-violet-500/30 to-indigo-500/20 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-violet-500/25 via-blue-500/35 to-cyan-500/25 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-indigo-500/15 via-purple-500/25 to-violet-500/15 rounded-full filter blur-3xl animate-pulse animation-delay-4000"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Technical <span className="bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent">Arsenal</span>
+            Technical <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">Arsenal</span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
             Mastering modern technologies to build scalable and innovative solutions.
@@ -81,7 +81,7 @@ const SkillsSection = () => {
                 onClick={() => setActiveTab(index)}
                 className={`flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 ${
                   activeTab === index
-                    ? `bg-gradient-to-r ${category.color} text-white shadow-lg shadow-orange-500/25`
+                    ? `bg-gradient-to-r ${category.color} text-white shadow-lg shadow-purple-500/25`
                     : 'bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 border border-slate-600/50'
                 }`}
               >
@@ -98,7 +98,7 @@ const SkillsSection = () => {
             {skillCategories[activeTab].skills.map((skill, index) => (
               <Card 
                 key={skill.name}
-                className="group bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 hover:border-orange-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/20 cursor-pointer"
+                className="group bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 cursor-pointer"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-6">
@@ -106,7 +106,7 @@ const SkillsSection = () => {
                     <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
                       {skill.icon}
                     </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-orange-400 transition-colors">
+                    <h3 className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">
                       {skill.name}
                     </h3>
                   </div>

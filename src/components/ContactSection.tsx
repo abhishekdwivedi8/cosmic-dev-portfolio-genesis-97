@@ -65,8 +65,8 @@ const ContactSection = () => {
       name: "Resume",
       url: "#resume",
       icon: Download,
-      color: "hover:text-emerald-400",
-      bg: "from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600"
+      color: "hover:text-purple-400",
+      bg: "from-purple-600 to-violet-700 hover:from-purple-500 hover:to-violet-600"
     }
   ];
 
@@ -75,38 +75,38 @@ const ContactSection = () => {
       icon: Mail,
       label: "Email",
       value: "abhishek.dwivedi2022@glbajajgroup.org",
-      color: "text-cyan-400",
-      bg: "from-cyan-500/10 to-cyan-600/10"
+      color: "text-purple-400",
+      bg: "from-purple-500/10 to-purple-600/10"
     },
     {
       icon: Phone,
       label: "Phone",
       value: "+91 9026019016",
-      color: "text-emerald-400",
-      bg: "from-emerald-500/10 to-emerald-600/10"
+      color: "text-violet-400",
+      bg: "from-violet-500/10 to-violet-600/10"
     },
     {
       icon: MapPin,
       label: "Location",
       value: "Mathura, Uttar Pradesh",
-      color: "text-purple-400",
-      bg: "from-purple-500/10 to-purple-600/10"
+      color: "text-indigo-400",
+      bg: "from-indigo-500/10 to-indigo-600/10"
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden" id="contact">
+    <section className="py-20 relative overflow-hidden" id="contact">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-80 h-80 bg-gradient-to-r from-cyan-500/15 to-teal-500/15 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-emerald-500/10 to-orange-500/10 rounded-full filter blur-3xl animate-blob"></div>
+        <div className="absolute top-20 left-10 w-80 h-80 bg-gradient-to-r from-purple-500/15 to-violet-500/15 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-indigo-500/15 to-blue-500/15 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-violet-500/10 to-purple-500/10 rounded-full filter blur-3xl animate-blob"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Get In <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">Touch</span>
+            Get In <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">Touch</span>
           </h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
             I'm always open to discussing new opportunities, collaborations, or just having a tech chat. 
@@ -117,8 +117,8 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Enhanced Contact Information */}
           <div className="space-y-8 animate-fade-in">
-            <Card className="glass-card hover-glow transition-all duration-500 border-2 border-transparent hover:border-cyan-400/50 overflow-hidden">
-              <div className="h-2 bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500"></div>
+            <Card className="glass-card hover-glow transition-all duration-500 border-2 border-transparent hover:border-purple-400/50 overflow-hidden">
+              <div className="h-2 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500"></div>
               <CardContent className="p-8 bg-gradient-to-br from-slate-800/90 to-slate-900/90">
                 <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
                 <p className="text-slate-400 mb-8 leading-relaxed">
@@ -131,7 +131,7 @@ const ContactSection = () => {
                   {contactInfo.map((info, index) => {
                     const IconComponent = info.icon;
                     return (
-                      <div key={index} className={`flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r ${info.bg} hover:scale-105 transition-all duration-300 border border-slate-700/30 hover:border-cyan-400/30`}>
+                      <div key={index} className={`flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r ${info.bg} hover:scale-105 transition-all duration-300 border border-slate-700/30 hover:border-purple-400/30`}>
                         <div className="p-3 bg-gradient-to-r from-slate-700 to-slate-600 rounded-xl shadow-lg">
                           <IconComponent className={`w-5 h-5 ${info.color}`} />
                         </div>
@@ -169,11 +169,11 @@ const ContactSection = () => {
             {/* Enhanced Quick Stats */}
             <div className="grid grid-cols-3 gap-4">
               {[
-                { label: "Projects", value: "10+", color: "from-cyan-400 to-teal-400" },
-                { label: "Problems Solved", value: "200+", color: "from-purple-400 to-pink-400" },
-                { label: "Technologies", value: "15+", color: "from-emerald-400 to-green-400" }
+                { label: "Projects", value: "10+", color: "from-purple-400 to-violet-400" },
+                { label: "Problems Solved", value: "200+", color: "from-violet-400 to-indigo-400" },
+                { label: "Technologies", value: "15+", color: "from-indigo-400 to-blue-400" }
               ].map((stat, index) => (
-                <Card key={index} className="glass-card hover-glow transition-all duration-300 hover:scale-105 border border-slate-700/50 hover:border-cyan-400/50">
+                <Card key={index} className="glass-card hover-glow transition-all duration-300 hover:scale-105 border border-slate-700/50 hover:border-purple-400/50">
                   <CardContent className="p-4 text-center bg-gradient-to-br from-slate-800/80 to-slate-900/80">
                     <div className={`text-2xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1`}>{stat.value}</div>
                     <div className="text-sm text-slate-400">{stat.label}</div>
@@ -184,8 +184,8 @@ const ContactSection = () => {
           </div>
 
           {/* Enhanced Contact Form */}
-          <Card className="glass-card hover-glow transition-all duration-500 animate-slide-in-right border-2 border-transparent hover:border-purple-400/50 overflow-hidden">
-            <div className="h-2 bg-gradient-to-r from-purple-500 via-cyan-500 to-emerald-500"></div>
+          <Card className="glass-card hover-glow transition-all duration-500 animate-slide-in-right border-2 border-transparent hover:border-violet-400/50 overflow-hidden">
+            <div className="h-2 bg-gradient-to-r from-violet-500 via-indigo-500 to-blue-500"></div>
             <CardContent className="p-8 bg-gradient-to-br from-slate-800/90 to-slate-900/90">
               <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
               
@@ -202,7 +202,7 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your full name"
-                    className="bg-slate-800/70 border-2 border-slate-600/50 text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-cyan-400 rounded-xl p-4 transition-all duration-300 hover:border-slate-500/70"
+                    className="bg-slate-800/70 border-2 border-slate-600/50 text-white placeholder:text-slate-500 focus:border-purple-400 focus:ring-purple-400 rounded-xl p-4 transition-all duration-300 hover:border-slate-500/70"
                   />
                 </div>
 
@@ -218,7 +218,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Enter your email address"
-                    className="bg-slate-800/70 border-2 border-slate-600/50 text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-cyan-400 rounded-xl p-4 transition-all duration-300 hover:border-slate-500/70"
+                    className="bg-slate-800/70 border-2 border-slate-600/50 text-white placeholder:text-slate-500 focus:border-purple-400 focus:ring-purple-400 rounded-xl p-4 transition-all duration-300 hover:border-slate-500/70"
                   />
                 </div>
 
@@ -234,14 +234,14 @@ const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="Tell me about your project or just say hello!"
                     rows={5}
-                    className="bg-slate-800/70 border-2 border-slate-600/50 text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-cyan-400 resize-none rounded-xl p-4 transition-all duration-300 hover:border-slate-500/70"
+                    className="bg-slate-800/70 border-2 border-slate-600/50 text-white placeholder:text-slate-500 focus:border-purple-400 focus:ring-purple-400 resize-none rounded-xl p-4 transition-all duration-300 hover:border-slate-500/70"
                   />
                 </div>
 
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-white font-semibold py-4 transition-all duration-300 hover:scale-105 btn-pulse rounded-xl shadow-lg hover:shadow-xl"
+                  className="w-full bg-gradient-to-r from-purple-500 to-violet-500 hover:from-purple-400 hover:to-violet-400 text-white font-semibold py-4 transition-all duration-300 hover:scale-105 btn-pulse rounded-xl shadow-lg hover:shadow-xl"
                 >
                   {isSubmitting ? (
                     <>
@@ -257,9 +257,9 @@ const ContactSection = () => {
                 </Button>
               </form>
 
-              <div className="mt-8 p-6 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-xl border border-emerald-400/30">
+              <div className="mt-8 p-6 bg-gradient-to-r from-purple-500/10 to-violet-500/10 rounded-xl border border-purple-400/30">
                 <div className="flex items-center gap-3 mb-3">
-                  <Badge className="bg-gradient-to-r from-emerald-500/30 to-cyan-500/30 text-emerald-300 border border-emerald-400/40 px-3 py-1">
+                  <Badge className="bg-gradient-to-r from-purple-500/30 to-violet-500/30 text-purple-300 border border-purple-400/40 px-3 py-1">
                     Available for Work
                   </Badge>
                 </div>
